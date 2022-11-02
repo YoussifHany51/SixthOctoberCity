@@ -16,7 +16,7 @@ struct SearchBarView: View {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(
                     searchText.isEmpty ?
-                        .gray : .primary)
+                        .red : .primary)
             
             TextField("Search here",text: $searchText)
                 .foregroundColor(.primary)

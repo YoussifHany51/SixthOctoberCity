@@ -21,13 +21,16 @@ struct CategoryGridView: View {
         Category(name: "Fashion", image: "Fashion")
     ]
     let columns = Array(repeating: GridItem(.flexible(),spacing: 10), count: 3)
-    @State var moreButton:Bool = false
     
     var body: some View {
         ScrollView{
             LazyVGrid(columns:columns,spacing: 10){
                 ForEach(categories){cat in
-                    CategoryStyleView(category: cat)
+                    Button{
+                        
+                    }label: {
+                        CategoryStyleView(category: cat)
+                    }
                 }
             }
             .padding()

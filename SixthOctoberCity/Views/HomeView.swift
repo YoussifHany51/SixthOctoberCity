@@ -8,7 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @EnvironmentObject var vm : CityServiceViewModel
+    
+    init(){
+        UINavigationBar.appearance().largeTitleTextAttributes
+        = [.foregroundColor:UIColor.init(.red)]
+    }
+    
     var body: some View {
         NavigationStack{
             ScrollView {
@@ -17,10 +24,30 @@ struct HomeView: View {
                         UpperText
                          Spacer()
                         SearchBarView(searchText: $vm.searchText)
-                      
+                        CategoryGridView()
                     }
                 }
                 .navigationTitle("Discover")
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button{
+                            
+                        }label: {
+                            Image(systemName: "plus.circle")
+                                .font(.headline)
+                                .foregroundColor(.red)
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button{
+                            
+                        }label: {
+                            Image(systemName: "phone")
+                                .font(.headline)
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
             }
         }
     }

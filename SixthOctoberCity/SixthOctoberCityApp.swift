@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SixthOctoberCityApp: App {
+    
+    @StateObject var vm : CityServiceViewModel = CityServiceViewModel()
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(vm)
         }
     }
 }
