@@ -9,25 +9,16 @@ import SwiftUI
 
 struct CategoryGridView: View {
     
-    let categories = [
-        Category(name: "Cinema", image: "Cinema"),
-        Category(name: "Bank", image: "Bank"),
-        Category(name: "Nursery", image: "Nursery"),
-        Category(name: "Restaurant", image: "Restaurant"),
-        Category(name: "Shopping Mall", image: "ShoppingMall"),
-        Category(name: "University", image: "University"),
-        Category(name: "School", image: "School"),
-        Category(name: "Gym", image: "Gym"),
-        Category(name: "Fashion", image: "Fashion")
-    ]
-    let columns = Array(repeating: GridItem(.flexible(),spacing: 10), count: 3)
+    @EnvironmentObject var vm:CityServiceViewModel
+    let columns = Array(repeating: GridItem(.flexible(),spacing: 10),count: 3)
+    @State var isPresented:Bool = false
     
     var body: some View {
         ScrollView{
             LazyVGrid(columns:columns,spacing: 10){
-                ForEach(categories){cat in
+                ForEach(vm.categories){cat in
                     Button{
-                        
+                        isPresented.toggle()
                     }label: {
                         CategoryStyleView(category: cat)
                     }
@@ -35,6 +26,9 @@ struct CategoryGridView: View {
             }
             .padding()
         }
+        .sheet(isPresented: $isPresented, content: {
+            
+        })
         .background(Color.white)
     }
 }
@@ -42,5 +36,6 @@ struct CategoryGridView: View {
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryGridView()
+            .environmentObject(CityServiceViewModel())
     }
 }
