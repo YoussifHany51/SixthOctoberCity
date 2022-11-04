@@ -22,9 +22,17 @@ struct HomeView: View {
                 VStack{
                     VStack{
                         UpperText
-                         Spacer()
                         SearchBarView(searchText: $vm.searchText)
+                            ForEach(vm.filterList(
+                                text: vm.searchText,
+                                cityServiceList: vm.cityService)){cityServ in
+                                    if !vm.searchText.isEmpty{
+                                        Text(cityServ.name)
+                                    }
+                            }
                         CategoryGridView()
+                        TopRatingTitle
+                        //TopRatingSection
                     }
                 }
                 .navigationTitle("Discover")
@@ -69,5 +77,23 @@ extension HomeView{
                  .foregroundColor(.gray)
             Spacer()
         }
+    }
+    
+    private var TopRatingTitle:some View{
+        HStack{
+            HStack{
+                Text("Top Rating")
+                Image(systemName: "star.fill")
+            }
+            .foregroundColor(.white)
+            .font(.headline)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(.red)
+                    .frame(width: 130,height: 40))
+            .padding(.horizontal)
+            Spacer()
+        }
+        .padding(.top)
     }
 }
