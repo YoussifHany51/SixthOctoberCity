@@ -8,7 +8,7 @@
 import Foundation
 class CityServiceViewModel : ObservableObject{
     @Published var searchText:String = ""
-    
+    @Published var topRatingList:[CityService] = []
     @Published var categories = [
         Category(name: "Cinema", image: "Cinema"),
         Category(name: "Bank", image: "Bank"),
@@ -38,6 +38,15 @@ class CityServiceViewModel : ObservableObject{
         
         return cityServiceList.filter { (cityServiceList) -> Bool in
             return cityServiceList.name.lowercased().contains(lowerCased)
+        }
+    }
+    
+    func getTopRating(cityServiceList:[CityService]){
+       let sortedList = cityServiceList.sorted(by: { $0.rating > $1.rating })
+        for rate in 0..<3{
+            DispatchQueue.main.asyncAfter(deadline: .now()+3){
+                self.topRatingList.append(sortedList[rate])
+            }
         }
     }
 }

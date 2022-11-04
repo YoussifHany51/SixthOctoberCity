@@ -32,7 +32,13 @@ struct HomeView: View {
                             }
                         CategoryGridView()
                         TopRatingTitle
+                            .onAppear{
+                                vm.getTopRating(cityServiceList: vm.cityService)
+                            }
                         //TopRatingSection
+                        ForEach(vm.topRatingList){rate in
+                            Text(rate.name)
+                        }
                     }
                 }
                 .navigationTitle("Discover")
