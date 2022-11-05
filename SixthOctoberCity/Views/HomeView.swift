@@ -11,6 +11,7 @@ struct HomeView: View {
     
     @EnvironmentObject var vm : CityServiceViewModel
     @State var moreButton:Bool = true
+    let rows = Array(repeating: GridItem(.flexible(),spacing: 10),count: 1)
     
     init(){
         UINavigationBar.appearance().largeTitleTextAttributes
@@ -38,9 +39,10 @@ struct HomeView: View {
                                 vm.getTopRating(cityServiceList: vm.cityService)
                             }
                         //TopRatingSection
-                        ForEach(vm.topRatingList){rate in
-                            Text(rate.name)
-                        }
+//                        ForEach(vm.topRatingList){rate in
+//                            Text(rate.name)
+//                        }
+                        TopRatingListView()
                     }
                 }
                 .navigationTitle("Discover")
@@ -114,13 +116,14 @@ extension HomeView{
         }label: {
             Spacer()
             HStack{
-                Image(systemName: "plus.circle.fill")
-                Text("More")
+                Image(systemName: moreButton ? "plus.circle.fill":"minus.circle.fill")
+                Text(moreButton ? "More":"less")
                     .underline()
             }
             .foregroundColor(.red)
             .font(.headline)
             .padding(.horizontal)
+            .rotationEffect(Angle(degrees: moreButton ? 0 : 360))
         }
         .padding()
     }

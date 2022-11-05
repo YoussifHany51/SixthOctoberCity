@@ -23,10 +23,10 @@ class CityServiceViewModel : ObservableObject{
     ]
     
     @Published var cityService = [
-        CityService(name: "Hoda hospital", address: "1th district", category: "Hospital", imgURL: "", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 3.5),
-        CityService(name: "Galaxy cinema", address: "Hossary", category: "Cinema", imgURL: "", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 2),
-        CityService(name: "Golds gym", address: "7th district", category: "Gym", imgURL: "", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 5),
-        CityService(name: "Pioneer international school", address: "8th district", category: "School", imgURL: "", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 4),
+        CityService(name: "Hoda hospital", address: "1th district", category: "Hospital", imgURL: "hodaHospital", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 3.5),
+        CityService(name: "Galaxy cinema", address: "Hossary", category: "Cinema", imgURL: "galaxyCinema", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 2),
+        CityService(name: "Golds gym", address: "7th district", category: "Gym", imgURL: "goldsGym", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 5),
+        CityService(name: "Pioneer international school", address: "8th district", category: "School", imgURL: "pioneerSchool", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 4),
     ]
     
         func filterList(text:String , cityServiceList:[CityService]) -> [CityService]{
