@@ -14,11 +14,13 @@ struct CategoryGridView: View {
     @State var isPresented:Bool = false
     @State var cityServiceName:String = ""
     @State var cityServiceImage:String = ""
+    @Binding var moreButton:Bool
     
     var body: some View {
         ScrollView{
             LazyVGrid(columns:columns,spacing: 10){
-                ForEach(vm.categories){cat in
+                let arraySlice = vm.categories[...2]
+                ForEach(moreButton ? Array(arraySlice) : vm.categories){cat in
                     Button{
                         isPresented.toggle()
                         cityServiceName = cat.name
@@ -41,7 +43,7 @@ struct CategoryGridView: View {
 
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryGridView()
+        CategoryGridView(moreButton: .constant(true))
             .environmentObject(CityServiceViewModel())
     }
 }

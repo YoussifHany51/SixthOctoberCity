@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var vm : CityServiceViewModel
+    @State var moreButton:Bool = true
     
     init(){
         UINavigationBar.appearance().largeTitleTextAttributes
@@ -30,7 +31,8 @@ struct HomeView: View {
                                         Text(cityServ.name)
                                     }
                             }
-                        CategoryGridView()
+                        CategoryGridView(moreButton: $moreButton)
+                        MoreButtonSection
                         TopRatingTitle
                             .onAppear{
                                 vm.getTopRating(cityServiceList: vm.cityService)
@@ -101,5 +103,25 @@ extension HomeView{
             Spacer()
         }
         .padding(.top)
+    }
+    
+    private var MoreButtonSection : some View{
+        Button{
+            withAnimation(.easeIn(duration: 1)){
+                moreButton.toggle()
+            }
+            
+        }label: {
+            Spacer()
+            HStack{
+                Image(systemName: "plus.circle.fill")
+                Text("More")
+                    .underline()
+            }
+            .foregroundColor(.red)
+            .font(.headline)
+            .padding(.horizontal)
+        }
+        .padding()
     }
 }
