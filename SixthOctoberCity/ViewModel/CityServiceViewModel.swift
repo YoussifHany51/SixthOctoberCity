@@ -23,10 +23,10 @@ class CityServiceViewModel : ObservableObject{
     ]
     
     @Published var cityService = [
-        CityService(name: "Hoda hospital", address: "1th district", category: "Hospital", imgURL: "hodaHospital", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 3.5),
-        CityService(name: "Galaxy cinema", address: "Hossary", category: "Cinema", imgURL: "galaxyCinema", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 2),
-        CityService(name: "Golds gym", address: "7th district", category: "Gym", imgURL: "goldsGym", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 5),
-        CityService(name: "Pioneer international school", address: "8th district", category: "School", imgURL: "pioneerSchool", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 4),
+        CityService(name: "Hoda hospital", address: "1th district", branches: ["Mohandsin","Alex","October"], category: "Hospital", imgURL: "hodaHospital", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 3.5),
+        CityService(name: "Galaxy cinema", address: "Hossary", branches: ["October","Manial"], category: "Cinema", imgURL: "galaxyCinema", facbookURL: "https/facbook.com", instgramURL: "https/instagram.com", phoneNumber: 0103445345, rating: 2),
+        CityService(name: "Golds gym", address: "7th district", branches: ["Rehab","October","Alex","Zamalek","Zayed"], category: "Gym", imgURL: "goldsGym", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 5),
+        CityService(name: "Pioneer international school", address: "8th district", branches: ["October","Mohandsinn","Nasr city"], category: "School", imgURL: "pioneerSchool", facbookURL: "https/facbook.com", instgramURL: "https/instgaram.com", phoneNumber: 0103445345, rating: 4),
     ]
     
         func filterList(text:String , cityServiceList:[CityService]) -> [CityService]{

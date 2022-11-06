@@ -12,16 +12,18 @@ struct CityService:Identifiable,Codable{
     let name:String
     let address:String
     let category:String
+    let branches:[String]
     let imgURL:String?
     let facbookURL:String
     let instgramURL:String
     let phoneNumber:Int
     let rating:Float
     
-    init(id: String = UUID().uuidString, name: String, address: String, category: String, imgURL: String, facbookURL: String, instgramURL: String, phoneNumber: Int, rating: Float) {
+    init(id: String = UUID().uuidString, name: String, address: String,branches:[String], category: String, imgURL: String, facbookURL: String, instgramURL: String, phoneNumber: Int, rating: Float) {
         self.id = id
         self.name = name
         self.address = address
+        self.branches = branches
         self.category = category
         self.imgURL = imgURL
         self.facbookURL = facbookURL

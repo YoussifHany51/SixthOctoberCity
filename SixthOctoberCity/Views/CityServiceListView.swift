@@ -19,7 +19,32 @@ struct CityServiceListView: View {
                 CategoryTitle
                     List{
                         ForEach(vm.filterList(text: name, cityServiceList: vm.cityService)){cityServ in
-                                Text(cityServ.name)
+                            Button{
+                                
+                            }
+                            label: {
+                            HStack{
+                                Image(cityServ.imgURL ?? "store")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 130,height: 70)
+                                VStack(spacing: 7){
+                                    Text(cityServ.name)
+                                        .bold()
+                                        .padding(.top)
+                                    HStack{
+                                        Text("Address:")
+                                        Text(cityServ.address)
+                                    }
+                                    HStack {
+                                        Text("rating:")
+                                        Text(String(cityServ.rating))
+                                            .foregroundColor(.red)
+                                    }
+                                }
+                            }
+                            .foregroundColor(.primary)
+                        }
                         }
                     }
             }
@@ -29,7 +54,7 @@ struct CityServiceListView: View {
 
 struct CityServiceListView_Previews: PreviewProvider {
     static var previews: some View {
-        CityServiceListView(name: .constant("Gym"),image: .constant(""))
+        CityServiceListView(name: .constant("Gym"),image: .constant("store"))
             .environmentObject(CityServiceViewModel())
     }
 }

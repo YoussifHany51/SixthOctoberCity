@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A7E9682916A92100F37E1D /* TopRatingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7E9672916A92100F37E1D /* TopRatingListView.swift */; };
 		09EE19DD29105F9E00B1F087 /* SixthOctoberCityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE19DC29105F9E00B1F087 /* SixthOctoberCityApp.swift */; };
 		09EE19E129105FA000B1F087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09EE19E029105FA000B1F087 /* Assets.xcassets */; };
 		09EE19E429105FA000B1F087 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09EE19E329105FA000B1F087 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09A7E9672916A92100F37E1D /* TopRatingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatingListView.swift; sourceTree = "<group>"; };
 		09EE19D929105F9E00B1F087 /* SixthOctoberCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixthOctoberCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EE19DC29105F9E00B1F087 /* SixthOctoberCityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthOctoberCityApp.swift; sourceTree = "<group>"; };
 		09EE19E029105FA000B1F087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				09EE19EE291060AD00B1F087 /* HomeView.swift */,
 				09EE19F92911C88A00B1F087 /* CategoryGridView.swift */,
 				09EE1A0529145C2300B1F087 /* CityServiceListView.swift */,
+				09A7E9672916A92100F37E1D /* TopRatingListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				09EE19F629106F3400B1F087 /* SearchBarView.swift in Sources */,
 				09EE19EF291060AD00B1F087 /* HomeView.swift in Sources */,
 				09EE19DD29105F9E00B1F087 /* SixthOctoberCityApp.swift in Sources */,
+				09A7E9682916A92100F37E1D /* TopRatingListView.swift in Sources */,
 				09EE1A002911D09400B1F087 /* CategoryStyleView.swift in Sources */,
 				09EE1A022914014A00B1F087 /* CityServiceModel.swift in Sources */,
 				09EE19FE2911CAC700B1F087 /* CategoriesModel.swift in Sources */,
