@@ -15,14 +15,12 @@ struct CityServiceListView: View {
     @Binding var image:String
     
     var body: some View {
+        NavigationStack {
             VStack{
                 CategoryTitle
-                    List{
-                        ForEach(vm.filterList(text: name, cityServiceList: vm.cityService)){cityServ in
-                            Button{
-                                
-                            }
-                            label: {
+                List{
+                    ForEach(vm.filterList(text: name, cityServiceList: vm.cityService)){cityServ in
+                        NavigationLink(destination:CityServiceDetailView(cityService: cityServ)){
                             HStack{
                                 Image(cityServ.imgURL ?? "store")
                                     .resizable()
@@ -45,10 +43,11 @@ struct CityServiceListView: View {
                             }
                             .foregroundColor(.primary)
                         }
-                        }
                     }
+                }
             }
             .overlay(BackButton,alignment: .topLeading)
+        }
     }
 }
 

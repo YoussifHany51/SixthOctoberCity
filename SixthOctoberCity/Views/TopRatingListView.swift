@@ -20,9 +20,7 @@ struct TopRatingListView: View {
                             RoundedRectangle(cornerRadius: 30)
                                 .fill(Color.white)
                                 .rotation3DEffect(Angle(degrees:Double(geometry.frame(in: .global).minX) / -20), axis: (x: 0, y: 1, z: 0))
-                            Button{
-                                
-                            }label: {
+                            NavigationLink(destination:CityServiceDetailView(cityService: item)){
                                 VStack{
                                     Image(item.imgURL ?? "store")
                                         .resizable()

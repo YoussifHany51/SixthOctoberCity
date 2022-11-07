@@ -14,12 +14,12 @@ struct CityService:Identifiable,Codable{
     let category:String
     let branches:[String]
     let imgURL:String?
-    let facbookURL:String
-    let instgramURL:String
+    let facbookURL:URL
+    let instgramURL:URL
     let phoneNumber:Int
     let rating:Float
     
-    init(id: String = UUID().uuidString, name: String, address: String,branches:[String], category: String, imgURL: String, facbookURL: String, instgramURL: String, phoneNumber: Int, rating: Float) {
+    init(id: String = UUID().uuidString, name: String, address: String,branches:[String], category: String, imgURL: String, facbookURL: URL, instgramURL: URL, phoneNumber: Int, rating: Float) {
         self.id = id
         self.name = name
         self.address = address
