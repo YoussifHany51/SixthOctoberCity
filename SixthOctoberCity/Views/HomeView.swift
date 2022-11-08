@@ -29,7 +29,13 @@ struct HomeView: View {
                                 text: vm.searchText,
                                 cityServiceList: vm.cityService)){cityServ in
                                     if !vm.searchText.isEmpty{
-                                        Text(cityServ.name)
+                                        HStack{
+                                            Image(cityServ.imgURL ?? "store")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 40,height: 40)
+                                            Text(cityServ.name)
+                                        }
                                     }
                             }
                         CategoryGridView(moreButton: $moreButton)
@@ -48,18 +54,14 @@ struct HomeView: View {
                 .navigationTitle("Discover")
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button{
-                            
-                        }label: {
+                        NavigationLink(destination:AddNewCityServiceView()){
                             Image(systemName: "plus.circle")
                                 .font(.headline)
                                 .foregroundColor(.red)
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button{
-                            
-                        }label: {
+                        NavigationLink(destination:ContactUsView()) {
                             Image(systemName: "phone")
                                 .font(.headline)
                                 .foregroundColor(.red)
