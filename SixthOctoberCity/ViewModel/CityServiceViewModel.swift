@@ -7,6 +7,11 @@
 
 import Foundation
 class CityServiceViewModel : ObservableObject{
+    
+    init(){
+        getTopRating(cityServiceList: cityService)
+    }
+    
     @Published var searchText:String = ""
     @Published var topRatingList:[CityService] = []
     @Published var categories = [

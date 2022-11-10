@@ -33,12 +33,12 @@ struct TopRatingListView: View {
                                             .fontWeight(.semibold)
                                             .frame(height: 10)
                                         HStack{
-                                            Text("rate:")
-                                                .foregroundColor(.black)
-                                            Text("5 /")
+                                            Text("rating:")
                                                 .foregroundColor(.black)
                                             Text(String(item.rating))
                                                 .foregroundColor(.red)
+                                            Text("/ 5")
+                                                .foregroundColor(.black)
                                         }
                                     }
                                 }

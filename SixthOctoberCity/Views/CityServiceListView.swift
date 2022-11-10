@@ -24,8 +24,9 @@ struct CityServiceListView: View {
                             HStack{
                                 Image(cityServ.imgURL ?? "store")
                                     .resizable()
+                                    .scaledToFit()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 130,height: 70)
+                                    .frame(width: 70,height: 70)
                                 VStack(spacing: 7){
                                     Text(cityServ.name)
                                         .bold()
@@ -76,7 +77,7 @@ extension CityServiceListView{
     }
     
     private var CategoryTitle:some View{
-        ZStack (alignment: .bottom){
+//        ZStack (alignment: .bottom){
             VStack(spacing: 5){
                 Image(image)
                     .resizable()
@@ -90,10 +91,10 @@ extension CityServiceListView{
                         .fontWeight(.black)
                         .foregroundColor(.black)
                         .padding()
-                    Spacer()
+//                    Spacer()
                 }
             }
-        }
+//        }
     }
     
 }

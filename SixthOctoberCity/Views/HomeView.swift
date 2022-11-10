@@ -44,9 +44,6 @@ struct HomeView: View {
                         CategoryGridView(moreButton: $moreButton)
                         MoreButtonSection
                         TopRatingTitle
-                            .onAppear{
-                                vm.getTopRating(cityServiceList: vm.cityService)
-                            }
                         TopRatingListView()
                     }
                 }
