@@ -29,12 +29,15 @@ struct HomeView: View {
                                 text: vm.searchText,
                                 cityServiceList: vm.cityService)){cityServ in
                                     if !vm.searchText.isEmpty{
-                                        HStack{
-                                            Image(cityServ.imgURL ?? "store")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 40,height: 40)
-                                            Text(cityServ.name)
+                                        NavigationLink(destination:CityServiceDetailView(cityService: cityServ)){
+                                            HStack{
+                                                Image(cityServ.imgURL ?? "store")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: 40,height: 40)
+                                                Text(cityServ.name)
+                                            }
+                                            .foregroundColor(.primary)
                                         }
                                     }
                             }
@@ -44,12 +47,11 @@ struct HomeView: View {
                             .onAppear{
                                 vm.getTopRating(cityServiceList: vm.cityService)
                             }
-                        //TopRatingSection
-//                        ForEach(vm.topRatingList){rate in
-//                            Text(rate.name)
-//                        }
                         TopRatingListView()
                     }
+                }
+                .onTapGesture {
+                    dismissKeyBoard()
                 }
                 .navigationTitle("Discover")
                 .toolbar{
