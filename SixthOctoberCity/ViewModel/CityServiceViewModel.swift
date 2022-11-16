@@ -13,6 +13,10 @@ class CityServiceViewModel : ObservableObject{
     }
     
     @Published var searchText:String = ""
+    @Published var userName:String = ""
+    @Published var userEmail:String = ""
+    @Published var userNumber:String = ""
+    @Published var userMessage:String = ""
     @Published var topRatingList:[CityService] = []
     @Published var categories = [
         Category(name: "Cinema", image: "Cinema"),

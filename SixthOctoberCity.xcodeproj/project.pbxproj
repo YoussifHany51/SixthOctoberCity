@@ -11,6 +11,7 @@
 		09A7E9682916A92100F37E1D /* TopRatingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7E9672916A92100F37E1D /* TopRatingListView.swift */; };
 		09E2C290291AA2BA00365B07 /* AddNewCityServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2C28F291AA2BA00365B07 /* AddNewCityServiceView.swift */; };
 		09E2C292291AA2F900365B07 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2C291291AA2F900365B07 /* ContactUsView.swift */; };
+		09E2C294291DD14900365B07 /* InfoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2C293291DD14900365B07 /* InfoSheetView.swift */; };
 		09EE19DD29105F9E00B1F087 /* SixthOctoberCityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE19DC29105F9E00B1F087 /* SixthOctoberCityApp.swift */; };
 		09EE19E129105FA000B1F087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09EE19E029105FA000B1F087 /* Assets.xcassets */; };
 		09EE19E429105FA000B1F087 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09EE19E329105FA000B1F087 /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		09A7E9672916A92100F37E1D /* TopRatingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatingListView.swift; sourceTree = "<group>"; };
 		09E2C28F291AA2BA00365B07 /* AddNewCityServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCityServiceView.swift; sourceTree = "<group>"; };
 		09E2C291291AA2F900365B07 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
+		09E2C293291DD14900365B07 /* InfoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetView.swift; sourceTree = "<group>"; };
 		09EE19D929105F9E00B1F087 /* SixthOctoberCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixthOctoberCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EE19DC29105F9E00B1F087 /* SixthOctoberCityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthOctoberCityApp.swift; sourceTree = "<group>"; };
 		09EE19E029105FA000B1F087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				09663E3329185EC200351BC9 /* CityServiceDetailView.swift */,
 				09E2C28F291AA2BA00365B07 /* AddNewCityServiceView.swift */,
 				09E2C291291AA2F900365B07 /* ContactUsView.swift */,
+				09E2C293291DD14900365B07 /* InfoSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				09EE1A002911D09400B1F087 /* CategoryStyleView.swift in Sources */,
 				09E2C292291AA2F900365B07 /* ContactUsView.swift in Sources */,
 				09EE1A022914014A00B1F087 /* CityServiceModel.swift in Sources */,
+				09E2C294291DD14900365B07 /* InfoSheetView.swift in Sources */,
 				09EE19FE2911CAC700B1F087 /* CategoriesModel.swift in Sources */,
 				09EE19FA2911C88A00B1F087 /* CategoryGridView.swift in Sources */,
 				09EE19F82910738B00B1F087 /* CityServiceViewModel.swift in Sources */,
@@ -357,8 +361,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,6 +370,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youssif.SixthOctoberCity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,8 +393,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +402,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youssif.SixthOctoberCity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
