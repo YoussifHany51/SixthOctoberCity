@@ -166,6 +166,7 @@ extension ContactUsView{
             
             Button{
                 
+                vm.resetTextFields()
             }label: {
                 Text("SEND")
                     .foregroundColor(.red)

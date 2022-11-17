@@ -89,4 +89,15 @@ class CityServiceViewModel : ObservableObject{
             }
         }
     }
+    
+    func submitMessage(){
+        
+    }
+    
+    func resetTextFields(){
+        userName = ""
+        userEmail = ""
+        userNumber = ""
+        userMessage = ""
+    }
 }
