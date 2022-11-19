@@ -20,72 +20,9 @@ struct AddNewCityServiceView: View {
         NavigationStack{
             ScrollView{
                 VStack{
-                    VStack{
-                        Text("Add your place with us within 24 hours")
-                            .font(.title2)
-                            .foregroundColor(.red)
-                        Text("Send us the full details of your place via our email or via WhatsApp")
-                            .font(.callout)
-                    }
-                    .multilineTextAlignment(.center)
-                    .padding()
+                    FirstSection
                     
-                    Line()
-                        .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                                   .frame(height: 1)
-                                   .foregroundColor(.red)
-                                   .padding()
-                    
-                    VStack{
-                        Text("Details required to add your place with us")
-                            .font(.title3)
-                            .foregroundColor(.red)
-                            VStack{
-                                HStack{
-                                    Text("⦿")
-                                    Spacer()
-                                    Text("Place name")
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("⦿")
-                                    Spacer()
-                                    Text("Place Logo")
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("⦿")
-                                    Spacer()
-                                    Text("Place phone number")
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("⦿")
-                                    Spacer()
-                                    Text("Address in detail with share location")
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("⦿")
-                                    Spacer()
-                                    Text("Work times")
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("⦿")
-                                    Spacer()
-                                    Text("All social media links")
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("⦿")
-                                    Spacer()
-                                    Text("Website")
-                                    Spacer()
-                                }
-                            }
-                            .padding()
-                    }
+                    RequiredSection
                     .padding()
                     
                     Line()
@@ -134,7 +71,7 @@ struct AddNewCityServiceView: View {
                             .frame(maxWidth:.infinity)
                             .background(animate ? Color.red:Color.black)
                             .cornerRadius(10)
-                            .padding()
+                            .padding(.bottom)
                     }
                     .padding(.horizontal,animate ? 30 : 50)
                     .shadow(
@@ -177,5 +114,80 @@ struct Line: Shape {
         path.move(to: CGPoint(x: 0, y: 0))
         path.addLine(to: CGPoint(x: rect.width, y: 0))
         return path
+    }
+}
+
+
+extension AddNewCityServiceView{
+    private var FirstSection : some View {
+        VStack{
+            VStack{
+                Text("Add your place with us within 24 hours")
+                    .font(.title2)
+                    .foregroundColor(.red)
+                Text("Send us the full details of your place via our email or via WhatsApp")
+                    .font(.callout)
+            }
+            .multilineTextAlignment(.center)
+            .padding()
+            
+            Line()
+                .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                .frame(height: 1)
+                .foregroundColor(.red)
+                .padding()
+        }
+    }
+    private var RequiredSection:some View{
+        VStack{
+            Text("Details required to add your place with us")
+                .font(.title3)
+                .foregroundColor(.red)
+            VStack{
+                HStack{
+                    Text("⦿")
+                    Spacer()
+                    Text("Place name")
+                    Spacer()
+                }
+                HStack{
+                    Text("⦿")
+                    Spacer()
+                    Text("Place Logo")
+                    Spacer()
+                }
+                HStack{
+                    Text("⦿")
+                    Spacer()
+                    Text("Place phone number")
+                    Spacer()
+                }
+                HStack{
+                    Text("⦿")
+                    Spacer()
+                    Text("Address in detail with share location")
+                    Spacer()
+                }
+                HStack{
+                    Text("⦿")
+                    Spacer()
+                    Text("Work times")
+                    Spacer()
+                }
+                HStack{
+                    Text("⦿")
+                    Spacer()
+                    Text("All social media links")
+                    Spacer()
+                }
+                HStack{
+                    Text("⦿")
+                    Spacer()
+                    Text("Website")
+                    Spacer()
+                }
+            }
+            .padding()
+        }
     }
 }
