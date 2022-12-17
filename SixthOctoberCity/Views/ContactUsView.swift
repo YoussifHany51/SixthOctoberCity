@@ -35,6 +35,12 @@ struct ContactUsView: View {
             }
         }        
     }
+    func textChecker()->Bool{
+        if(vm.userName.count<3||vm.userEmail.count<6||vm.userNumber.count<10||vm.userMessage.count<3){
+            return false
+        }
+        return true
+    }
 }
 
 struct ContactUsView_Previews: PreviewProvider {
@@ -169,14 +175,15 @@ extension ContactUsView{
                 vm.resetTextFields()
             }label: {
                 Text("SEND")
-                    .foregroundColor(.red)
+                    .foregroundColor(textChecker() ? Color.white : Color.red)
                     .font(.headline)
                     .frame(height:55)
                     .frame(maxWidth:.infinity)
                     .background(Color.gray.opacity(0.3))
-//                                .background(textChecker() ? Color.accentColor : Color.gray.opacity(0.3))
+                    .background(textChecker() ? Color.red : Color.gray.opacity(0.3))
                     .cornerRadius(10)
             }
+            .disabled(!textChecker())
             .padding()
         }
     }
